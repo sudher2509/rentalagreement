@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landlord Rental Agreement App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Landlord Rental Agreement App</h1>
+      <p>Manage contracts, settle monthly rent, and review tenant ratings.</p>
+    </header>
+
+    <main class="dashboard">
+      <section class="card">
+        <h2>1) Create Contracts</h2>
+        <form id="contract-form" class="stack">
+          <label>
+            Tenant Name
+            <input type="text" id="tenant-name" required />
+          </label>
+          <label>
+            Property Address
+            <input type="text" id="property-address" required />
+          </label>
+          <label>
+            Monthly Rent ($)
+            <input type="number" id="monthly-rent" min="1" required />
+          </label>
+          <label>
+            Start Date
+            <input type="date" id="start-date" required />
+          </label>
+          <button type="submit">Create Contract</button>
+        </form>
+        <ul id="contracts-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>2) Settle Monthly Payments</h2>
+        <form id="payment-form" class="stack">
+          <label>
+            Select Contract
+            <select id="contract-select" required>
+              <option value="">Choose a tenant</option>
+            </select>
+          </label>
+          <label>
+            Month
+            <input type="month" id="payment-month" required />
+          </label>
+          <label>
+            Amount Paid ($)
+            <input type="number" id="payment-amount" min="1" required />
+          </label>
+          <button type="submit">Settle Payment</button>
+        </form>
+        <ul id="payments-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>3) Review Tenant Ratings</h2>
+        <form id="rating-form" class="stack">
+          <label>
+            Tenant
+            <select id="rating-tenant" required>
+              <option value="">Choose a tenant</option>
+            </select>
+          </label>
+          <label>
+            Rating (1–5)
+            <input type="number" id="rating-score" min="1" max="5" required />
+          </label>
+          <label>
+            Notes
+            <textarea id="rating-notes" rows="3" placeholder="Payment behavior, communication, property care..."></textarea>
+          </label>
+          <button type="submit">Add Review</button>
+        </form>
+        <ul id="ratings-list" class="list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
